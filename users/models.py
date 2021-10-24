@@ -1,8 +1,8 @@
 from django.db import models
 
-# Create your models here.
+from core.models import TimeStamp
 
-class User(models.Model):
+class User(TimeStamp):
   name = models.CharField(max_length=100, null=True)
   email = models.CharField(max_length=200, unique=True)
   password = models.CharField(max_length=200)
