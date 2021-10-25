@@ -12,8 +12,8 @@
 # Users
 ## 1. 회원가입 
 ### Endpoint
-- `POST` 
-- /users/signup
+- method : `POST` 
+- path : /users/signup
 
 
 ### request
@@ -63,8 +63,8 @@
 
 ## 2. 로그인
 ### Endpoint
-- `POST` 
-- /users/signin
+- method : `POST` 
+- path : /users/signin
 
 ### request
 - 로그인하기 위한 이메일과 비밀번호
@@ -109,8 +109,8 @@
 - 로그인을 성공하여 토큰을 받은 유저만 게시물을 작성할 수 있다
 
 ### Endpoint
-- `POST` 
-- /posts/post
+- method : `POST` 
+- path : /posts/post
 
 ### request
 - title : 게시물 제목
@@ -135,7 +135,7 @@
 }
 ```
 
--필수 key값 누락 시
+- 필수 key값 누락 시
 ```json
 {
   "MESSAGE": "KEY_ERROR"
@@ -144,8 +144,8 @@
 
 ## 4. 전체 게시물 조회
 ### Endpoint
-- `GET` 
-- /posts/post
+- method : `GET` 
+- path : /posts/post
 
 ### response
 ```json
@@ -223,8 +223,8 @@
 
 ## 5. 특정 게시물 조회
 ### Endpoint
-- `GET` 
-- /posts/post/<int:post_id>
+- method : `GET` 
+- path : /posts/post/<int:post_id>
 
 ### response
 - 해당 아이디 게시물 조회 성공시
@@ -251,8 +251,8 @@
 
 ## 6. 특정 게시물 삭제
 ### Endpoint
-- `DELETE` 
-- /posts/post/<int:post_id>
+- method : `DELETE` 
+- path : /posts/post/<int:post_id>
 
 ### request
 ```json
@@ -278,8 +278,8 @@
 
 ## 7. 특정 게시물 수정
 ### Endpoint
-- `PUT` 
-- /posts/post/<int:post_id>
+- method : `PUT` 
+- path : /posts/post/<int:post_id>
 
 ### request
 ```json
