@@ -212,3 +212,69 @@
   ]
 }
 ```
+
+- 존재하지 않는 id값 입력시
+```json
+{
+  "MESSAGE": "POST_DOES_NOT_EXIST"
+}
+```
+
+## 특정 게시물 삭제
+### Endpoint
+- `DELETE` 
+- /posts/post/<int:post_id>
+
+### request
+```json
+{ "headers" : {
+    "Authorization" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.8cYBjkeD45vXzEbv9SDyIg-bew6LMqaLQKJ_sKXYU1Y"
+    }
+}
+```
+
+### response
+- 성공시
+```json
+{
+  "MESSAGE": "SUCCESS"
+}
+```
+- 존재하지 않는 id값 입력시
+```json
+{
+  "MESSAGE": "POST_DOES_NOT_EXIST"
+}
+```
+
+## 특정 게시물 수정
+### Endpoint
+- `PUT` 
+- /posts/post/<int:post_id>
+
+### request
+```json
+{ "headers" : {
+    "Authorization" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.8cYBjkeD45vXzEbv9SDyIg-bew6LMqaLQKJ_sKXYU1Y"
+    },
+    "body" : {
+	"title" : "김태훈 첫번째 게시물 수정수정수정",
+	"content" : "수정수정수정"
+	}
+}
+```
+
+### response
+- 성공시
+```json
+{
+  "MESSAGE": "SUCCESS"
+}
+```
+
+- 존재하지 않는 id값 입력시
+```json
+{
+  "MESSAGE": "POST_DOES_NOT_EXIST"
+}
+```
