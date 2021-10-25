@@ -1,16 +1,16 @@
 # [위코드 x 원티드] 백엔드 프리온보딩 선발 과제
 ## Endpoint
-- 회원가입 : `POST` /users/signup
-- 로그인 : `POST` /users/signin
-- 게시물 작성 : `POST` /posts/post
-- 전체 게시물 조회 : `GET` /posts/post
-- 특정 게시물 조회 : `GET` /posts/post/<int:post_id>
-- 특정 게시물 삭제 : `DELETE` /posts/post/<int:post_id>
-- 특정 게시물 수정 : `PUT` /posts/post/<int:post_id>
+- 1. 회원가입 : `POST` /users/signup
+- 2. 로그인 : `POST` /users/signin
+- 3. 게시물 작성 : `POST` /posts/post
+- 4. 전체 게시물 조회 : `GET` /posts/post
+- 5. 특정 게시물 조회 : `GET` /posts/post/<int:post_id>
+- 6. 특정 게시물 삭제 : `DELETE` /posts/post/<int:post_id>
+- 7. 특정 게시물 수정 : `PUT` /posts/post/<int:post_id>
 
 
 # Users
-## 회원가입 
+## 1. 회원가입 
 ### Endpoint
 - `POST` 
 - /users/signup
@@ -61,7 +61,7 @@
 ```
 
 
-## 로그인
+## 2. 로그인
 ### Endpoint
 - `POST` 
 - /users/signin
@@ -105,7 +105,7 @@
 ```
 
 # Posts
-## 게시물 작성
+## 3. 게시물 작성
 - 로그인을 성공하여 토큰을 받은 유저만 게시물을 작성할 수 있다
 
 ### Endpoint
@@ -142,7 +142,7 @@
 }
 ```
 
-## 전체 게시물 조회
+## 4. 전체 게시물 조회
 ### Endpoint
 - `GET` 
 - /posts/post
@@ -192,7 +192,7 @@
 }
 ```
 
-## 특정 게시물 조회
+## 5. 특정 게시물 조회
 ### Endpoint
 - `GET` 
 - /posts/post/<int:post_id>
@@ -220,7 +220,7 @@
 }
 ```
 
-## 특정 게시물 삭제
+## 6. 특정 게시물 삭제
 ### Endpoint
 - `DELETE` 
 - /posts/post/<int:post_id>
@@ -247,7 +247,7 @@
 }
 ```
 
-## 특정 게시물 수정
+## 7. 특정 게시물 수정
 ### Endpoint
 - `PUT` 
 - /posts/post/<int:post_id>
