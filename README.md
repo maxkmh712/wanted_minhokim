@@ -17,11 +17,11 @@
 
 
 ### request
-```python
+```json
 {
-	"name" : "김태훈", # 유저 이름
-	"email" : "rlaxogns@gmail.com", # 유저 이메일
-	"password" : "rlaxogns11!" # 유저 비밀번호
+	"name" : "김태훈", 
+	"email" : "rlaxogns@gmail.com", 
+	"password" : "rlaxogns11!"
 }
 ```
 
