@@ -26,34 +26,37 @@
 ```
 
 ### response
+- 성공
 ```json
 {
-  "MESSAGE": "SUCCESS" # 성공
+  "MESSAGE": "SUCCESS"
+}
+```
+- 필수 key값 누락 시
+```json
+{
+  "MESSAGE": "KEY_ERROR"
 }
 ```
 
+- 아이디 중복
 ```json
 {
-  "MESSAGE": "KEY_ERROR" # 필수 key값 누락 시
+  "MESSAGE": "EMAIL_ALREADY_EXISTS" 
 }
 ```
 
+- 이메일 조건(@, . 포함) 미충족 
 ```json
 {
-  "MESSAGE": "EMAIL_ALREADY_EXISTS" # 아이디 중복  
+  "MESSAGE": "INVALID_EMAIL"
 }
 ```
 
-
+- 비밀번호 조건(비밀번호 8자리 이상, 소문자, 대문자, 특수문자) 미충족
 ```json
 {
-  "MESSAGE": "INVALID_EMAIL" # 이메일 조건(@, . 포함) 미충족 
-}
-```
-
-```json
-{
-  "MESSAGE": "INVALID_PASSWORD" # 비밀번호 조건(비밀번호 8자리 이상, 소문자, 대문자, 특수문자) 미충족
+  "MESSAGE": "INVALID_PASSWORD"
 }
 ```
 
@@ -64,35 +67,40 @@
 - /users/signin
 
 ### request
+- 로그인하기 위한 이메일과 비밀번호
 ```json
 {
-	"email" : "rlaxogns@gmail.com", # 로그인하기 위한 이메일과 비밀번호
+	"email" : "rlaxogns@gmail.com",
 	"password" : "rlaxogns11!"
 }
 ```
 
 ### response
+- 로그인 성공시 토큰 발급
 ```json
 {
-  "ACCESS_TOKEN": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.8cYBjkeD45vXzEbv9SDyIg-bew6LMqaLQKJ_sKXYU1Y" # 로그인 성공시 토큰 발급
+  "ACCESS_TOKEN": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.8cYBjkeD45vXzEbv9SDyIg-bew6LMqaLQKJ_sKXYU1Y"
 }
 ```
 
+- 필수 key값 누락 시
 ```json
 {
-  "MESSAGE": "KEY_ERROR" # 필수 key값 누락 시
+  "MESSAGE": "KEY_ERROR"
 }
 ```
 
+- 비밀번호 틀릴 시
 ```json
 {
-  "MESSAGE": "INVALID_PASSWORD" # 비밀번호 틀릴 시
+  "MESSAGE": "INVALID_PASSWORD"
 }
 ```
 
+- 이메일 틀릴 시
 ```json
 {
-  "MESSAGE": "INVALID_EMAIL" # 이메일 틀릴 시
+  "MESSAGE": "INVALID_EMAIL"
 }
 ```
 
@@ -105,27 +113,32 @@
 - /posts/post
 
 ### request
+- title : 게시물 제목
+- content : 게시물 내용
+
 ```json
 { "headers" : {
     "Authorization" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6M30.8cYBjkeD45vXzEbv9SDyIg-bew6LMqaLQKJ_sKXYU1Y"
     },
     "body" : {
-	"title" : "김태훈님의 첫 번째 게시물!!", # 게시물 제목
-	"content" : "게시물1게시물1게시물1게시물1게시물1" # 게시물 내용
+	"title" : "김태훈님의 첫 번째 게시물!!",
+	"content" : "게시물1게시물1게시물1게시물1게시물1"
     }
 }
 ```
 
 ### reponse
+- 게시물
 ```json
 {
-  "MESSAGE": "SUCCESS" # 게시물 
+  "MESSAGE": "SUCCESS" 
 }
 ```
 
+-필수 key값 누락 시
 ```json
 {
-  "MESSAGE": "KEY_ERROR" # 필수 key값 누락 시
+  "MESSAGE": "KEY_ERROR"
 }
 ```
 
@@ -185,9 +198,10 @@
 - /posts/post/<int:post_id>
 
 ### response
+- 해당 아이디 게시물 조회 성공시
 ```json
 {
-  "MESSAGE": "SUCCESS", # 해당 아이디 게시물 조회 성공시
+  "MESSAGE": "SUCCESS",
   "POST_IFNO": [
     {
       "id": 7,
